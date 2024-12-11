@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Sun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        header:hover {
+            background-color: rgba(0,0,0,0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff3b3b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: url('logo.png') no-repeat;
+            background-size: contain;
+            width: 150px;
+            height: 50px;
+            text-indent: -9999px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff3b3b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 200px 1rem 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: slideUp 1s ease 0.3s backwards;
+        }
+
+        .cta-button {
+            background-color: #ff3b3b;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: slideUp 1s ease 0.6s backwards;
+        }
+
+        .cta-button:hover {
+            background-color: #ff0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,59,59,0.4);
+        }
+
+        /* Fitur Section */
+        .fitur {
+            padding: 6rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+        }
+
+        .fitur h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .fitur-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .fitur-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .fitur-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .fitur-item img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .fitur-item h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .fitur-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="logo.png" alt="Rising Sun"></div>
+            <div class="nav-links">
+                <a href="#beranda">Beranda</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="kegiatan.html" style="text-decoration: none">Kegiatan</a>
+                <a href="login.html" style="text-decoration: none">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Rising Sun Car Community</h1>
+        <p>Bergabunglah dengan komunitas sport car terbaik di SA:MP Roleplay</p>
+        <a href="https://bit.ly/RisingSunComunity" class="cta-button" style="text-decoration: none">Gabung Sekarang</a>
+    </section>
+
+    <section class="fitur">
+        <h2>Keunggulan Komunitas</h2>
+        <div class="fitur-grid">
+            <div class="fitur-item">
+                <img src="meet.png" alt="Meet">
+                <h3>Weekly Meet</h3>
+                <p>Pertemuan rutin mingguan untuk mempererat persaudaraan</p>
+            </div>
+            <div class="fitur-item">
+                <img src="race.jpg" alt="Race">
+                <h3>Street Racing</h3>
+                <p>Balapan legal di sirkuit khusus dengan hadiah menarik</p>
+            </div>
+            <div class="fitur-item">
+                <img src="modifikasi.jpg" alt="Modif">
+                <h3>Car Modification</h3>
+                <p>Workshop modifikasi mobil sport dengan mekanik profesional</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rising Sun Car Community. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan - Rising Sun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            padding-top: 80px;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        /* Header */
+        header {
+            background: rgba(0,0,0,0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #ff3b3b;
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            background: #ff3b3b;
+            color: #fff;
+        }
+
+        /* Content */
+        .kegiatan-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .kegiatan-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s forwards;
+        }
+
+        .kegiatan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .kegiatan-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .kegiatan-content {
+            padding: 1.5rem;
+        }
+
+        .kegiatan-content h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .kegiatan-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tanggal {
+            color: #ff3b3b;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="logo.png" alt="Rising Sun" style="height: 50px;"></div>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="kegiatan.html" class="active">Kegiatan</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="kegiatan-container">
+        <div class="kegiatan-card" style="animation-delay: 0.2s">
+            <img src="meet.png" class="kegiatan-image" alt="Weekly Meet">
+            <div class="kegiatan-content">
+                <h3>Weekly Meet</h3>
+                <p>Pertemuan rutin mingguan untuk mempererat persaudaraan antar anggota komunitas.</p>
+                <span class="tanggal">Setiap Sabtu, 19:00 WIB</span>
+            </div>
+        </div>
+
+        <div class="kegiatan-card" style="animation-delay: 0.4s">
+            <img src="race.jpg" class="kegiatan-image" alt="Street Racing">
+            <div class="kegiatan-content">
+                <h3>Street Racing Event</h3>
+                <p>Kompetisi balap resmi dengan hadiah menarik di sirkuit khusus.</p>
+                <span class="tanggal">Cek selalu di discord Community</span>
+            </div>
+        </div>
+
+        <div class="kegiatan-card" style="animation-delay: 0.6s">
+            <img src="modifikasi.jpg" class="kegiatan-image" alt="Modifikasi">
+            <div class="kegiatan-content">
+                <h3>Workshop Modifikasi</h3>
+                <p>Sesi modifikasi dan perawatan mobil bersama mekanik profesional.</p>
+                <span class="tanggal">Setiap Rabu & Jumat</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
